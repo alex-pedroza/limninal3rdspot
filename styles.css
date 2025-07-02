@@ -1,0 +1,156 @@
+
+
+.bodyhome {
+    font-family: 'Lacquer', system-ui;
+    background-color: #1C2541;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    height: 100vh; /* Ensure the body covers the full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: url('assets/cursor.png'), auto;
+}
+
+.randobutton{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: none;
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    cursor: url('assets/cursor.png'), auto;
+    font-family: 'Lacquer', system-ui;
+
+    box-shadow: 
+    inset 2px 2px 10px rgba(255, 255, 255, 0.3), /* Inner highlight */
+    inset -5px -5px 10px 5px rgba(223, 104, 104, 0.4),    /* Inner shadow */
+    5px 5px 15px rgba(57, 31, 31, 0.3);            /* Outer shadow */
+
+}
+
+.randobutton:hover {
+    cursor: url('assets/cursorHover.png'), auto;
+    background-color: white;
+
+}
+
+.imgcontainer {
+    padding: 2rem;
+    color: #000000;
+    text-align: center;
+    max-width: 60%;
+
+}
+
+.imgcontainer:hover {
+    background-image: url(assets/reverse.png);
+}
+
+.gif-background {
+    background-image: url('assets/limninal.gif');
+    background-color: #1C2541;
+    background-position: left top;
+    background-size: contain;
+    width: 50vw;             /* 50% of viewport width */
+    height: 65vh;            /* 50% of viewport height */
+    background-repeat: no-repeat;
+    position: fixed;
+
+    
+}
+
+/* Writings templates */
+
+header {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 2rem;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-family: "Roboto", sans-serif;
+}
+
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.review {
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 1rem;
+    cursor: pointer;
+
+}
+
+.review-title {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.review .date {
+    font-size: 0.875rem;
+    color: #555555;
+    margin-bottom: 1rem;
+}
+
+.review .content {
+
+    font-size: 1rem;
+    line-height: 1;
+    display: none;
+}
+
+.subsection-title {
+    font-size: 1.25rem;
+    margin: 1rem 0 0.5rem;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+}
+
+.subsection-content {
+    display: none;
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-left: 1rem;
+    padding-left: 20%;
+    padding-right: 20%;
+    text-align: left;
+    font-family: Helvetica, sans-serif;
+}
+
+footer {
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
