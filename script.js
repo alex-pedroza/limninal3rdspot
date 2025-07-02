@@ -49,32 +49,34 @@ document.addEventListener("DOMContentLoaded", function() {
         document.body.style.cursor = "url('assets/cursor.png'), auto";
     });
 
+    // Check if the user is on a mobile device
+    function isMobileDevice() {
+        // Method 1: Check screen size (most reliable for responsiveness)
+        const isSmallScreen = window.innerWidth <= 768; // Common mobile breakpoint
 
+        // Method 2: Check user agent (optional, but catches some edge cases)
+        const isMobileUserAgent = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
-    //toggling the review section
+        return isSmallScreen || isMobileUserAgent;
+    }
 
-    const reviewTitles = document.querySelectorAll('.review-title');
-    const subsectionTitles = document.querySelectorAll('.subsection-title');
-
-    reviewTitles.forEach(title => {
-        title.addEventListener('click', function() {
-            const content = this.nextElementSibling.nextElementSibling;
-            if (content.style.display === "none" || content.style.display === "") {
-                content.style.display = "block";
-            } else {
-                content.style.display = "none";
-            }
-        });
-    });
-
-    subsectionTitles.forEach(title => {
-        title.addEventListener('click', function() {
-            const content = this.nextElementSibling;
-            if (content.style.display === "none" || content.style.display === "") {
-                content.style.display = "block";
-            } else {
-                content.style.display = "none";
-            }
-        });
-    });
+    // Show error if mobile
+    if (isMobileDevice()) {
+        document.body.innerHTML = `
+            <div style="
+            text-align: center;
+            padding: 50px;
+            font-family: Arial, sans-serif;
+            background: #f8f8f8;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            ">
+            <h1 style="color: #ff4444;">🚧 Mobile Not Supported</h1>
+            <p>This site is designed for desktop viewing.</p>
+            <p>Please visit on a larger screen.</p>
+            </div>
+  `     ;
+    }
 });
