@@ -57,8 +57,7 @@
     background-color: #1C2541;
     background-position: left top;
     background-size: contain;
-    width: 50vw;             /* 50% of viewport width */
-    height: 65vh;            /* 50% of viewport height */
+    height: 100vh;            /* 50% of viewport height */
     background-repeat: no-repeat;
     position: fixed;
 
