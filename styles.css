@@ -53,7 +53,7 @@
 }
 
 .gif-background {
-    background-image: url('https://github.com/alex-pedroza/limninal3rdspot/blob/main/assets/limninal.gif?raw=true');
+    background-image: url(assets/limninal2.png);
     background-color: #1C2541;
     background-position: left top;
     background-size: contain;
