@@ -48,6 +48,12 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    // Call the function when the page loads
+    document.addEventListener('DOMContentLoaded', placeButtonsRandomly);
+
+    // Optional: Re-position when window is resized
+    window.addEventListener('resize', placeButtonsRandomly);
+
     // Call the function to place buttons randomly
     placeButtonsRandomly();
 
