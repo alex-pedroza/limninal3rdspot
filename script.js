@@ -1,39 +1,51 @@
 document.addEventListener("DOMContentLoaded", function() {
     const buttons = document.querySelectorAll('.randobutton');
-
+    const buttonImages = {
+        'writings-btn': 'assets/reach_me.jpg',
+        'lino-cuts-btn': 'path/to/lino-cuts-image.jpg',
+        'reach-me-btn': 'path/to/reach-me-image.jpg',
+        'projects-btn': 'path/to/projects-image.jpg'
+};
     
     // Function to randomly place buttons
     function placeButtonsRandomly() {
         const header = document.querySelector('.gif-background'); // Replace with your header's selector
-        
+        const buttons = document.querySelectorAll('.randobutton');
+
         const headerWidth = header ? header.offsetWidth: 200; // Default if header missing
         const headerHeight = header ? header.offsetHeight : 200;
 
         buttons.forEach(button => {
-        const viewportWidth = window.innerWidth;
-        const viewportHeight = window.innerHeight;
 
-        let randomTop, randomLeft;
-        let attempts = 0;
-        const maxAttempts = 100;
+            const buttonId = button.id;
+            if (buttonImages[buttonId]) {
+            button.style.backgroundImage = `url(${buttonImages[buttonId]})`;
+            }
 
-        do {
-            randomTop = Math.floor(Math.random() * (viewportHeight - button.offsetHeight));
-            randomLeft = Math.floor(Math.random() * (viewportWidth - button.offsetWidth));
-            attempts++;
-        } while (
-            (randomTop < headerHeight && randomLeft < headerWidth) && // Check if inside header zone
-            (attempts < maxAttempts)
-        );
+            const viewportWidth = window.innerWidth;
+            const viewportHeight = window.innerHeight;
 
-        // Fallback placement if too many attempts
-        if (attempts >= maxAttempts) {
-            randomTop = headerHeight;
-            randomLeft = headerWidth;
-        }
+            let randomTop, randomLeft;
+            let attempts = 0;
+            const maxAttempts = 100;
 
-        button.style.top = `${randomTop}px`;
-        button.style.left = `${randomLeft}px`;
+            do {
+                randomTop = Math.floor(Math.random() * (viewportHeight - button.offsetHeight));
+                randomLeft = Math.floor(Math.random() * (viewportWidth - button.offsetWidth));
+                attempts++;
+            } while (
+                (randomTop < headerHeight && randomLeft < headerWidth) && // Check if inside header zone
+                (attempts < maxAttempts)
+            );
+
+            // Fallback placement if too many attempts
+            if (attempts >= maxAttempts) {
+                randomTop = headerHeight;
+                randomLeft = headerWidth;
+            }
+
+            button.style.top = `${randomTop}px`;
+            button.style.left = `${randomLeft}px`;
         });
     }
 
