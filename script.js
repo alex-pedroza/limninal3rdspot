@@ -9,8 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // Function to randomly place buttons
     function placeButtonsRandomly() {
-        const header = document.querySelector('.gif-background'); // Replace with your header's selector
-        const buttons = document.querySelectorAll('.randobutton');
+        const header = document.querySelector('.gif-background'); 
 
         const headerWidth = header ? header.offsetWidth: 200; // Default if header missing
         const headerHeight = header ? header.offsetHeight : 200;
