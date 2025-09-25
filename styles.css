@@ -17,8 +17,8 @@
 
 .randobutton{
     position: absolute;
-    width: 125px;
-    height: 125px;
+    width: 175px;
+    height: 175px;
     border: none;
     color: transparent;
     transition: background-color 0.3s ease;

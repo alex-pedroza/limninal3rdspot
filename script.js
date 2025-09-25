@@ -10,8 +10,6 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log("SCRIPT IS LOADING");
 
     function placeButtonsRandomly() {
-        // Force a visible alert to test if function is called
-        alert("placeButtonsRandomly is running!");
         
         const header = document.querySelector('.gif-background');
         const buttons = document.querySelectorAll('.randobutton');
