@@ -20,6 +20,14 @@ document.addEventListener("DOMContentLoaded", function() {
             if (buttonImages[buttonId]) {
             button.style.backgroundImage = `url(${buttonImages[buttonId]})`;
             }
+            if (buttonImages[buttonId]) {
+            const imagePath = buttonImages[buttonId];
+            console.log('Setting image:', imagePath); // Debug log
+            button.style.backgroundImage = `url('${imagePath}')`;
+            } else {
+                console.log('No image found for:', buttonId); // Debug log
+            }
+
 
             const viewportWidth = window.innerWidth;
             const viewportHeight = window.innerHeight;
