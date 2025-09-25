@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
     const buttons = document.querySelectorAll('.randobutton');
     const buttonImages = {
-        'writings-btn': 'assets/reach_me.jpg',
-        'lino-cuts-btn': 'path/to/lino-cuts-image.jpg',
-        'reach-me-btn': 'assets/reach_me.jpg',
-        'projects-btn': 'path/to/projects-image.jpg'
+        'writ-btn': 'assets/reach_me.jpg',
+        'lino-btn': 'path/to/lino-cuts-image.jpg',
+        'reach-btn': 'assets/reach_me.jpg',
+        'projs-btn': 'path/to/projects-image.jpg'
 };
     
     // Function to randomly place buttons
