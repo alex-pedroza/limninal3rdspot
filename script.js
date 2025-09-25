@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function() {
         document.body.style.cursor = "url('assets/cursor-click.png'), auto";
     });
 
-    document.body.addEventListener('mouseup', function() {``
+    document.body.addEventListener('mouseup', function() {
         document.body.style.cursor = "url('assets/cursor.png'), auto";
     });
 
