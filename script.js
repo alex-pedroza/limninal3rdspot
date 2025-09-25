@@ -21,12 +21,20 @@ document.addEventListener("DOMContentLoaded", function() {
             button.style.backgroundImage = `url(${buttonImages[buttonId]})`;
             }
             if (buttonImages[buttonId]) {
-            const imagePath = buttonImages[buttonId];
-            console.log('Setting image:', imagePath); // Debug log
-            button.style.backgroundImage = `url('${imagePath}')`;
-            } else {
-                console.log('No image found for:', buttonId); // Debug log
-            }
+            const img = new Image();
+            img.src = buttonImages[buttonId];
+            
+            img.onload = function() {
+                console.log('Image loaded successfully:', buttonImages[buttonId]);
+                button.style.backgroundImage = `url('${buttonImages[buttonId]}')`;
+                button.style.backgroundColor = 'transparent'; // Remove any fallback color
+            };
+            
+            img.onerror = function() {
+                console.error('Image failed to load:', buttonImages[buttonId]);
+                button.style.backgroundColor = 'red'; // Show error color
+            };
+        }
 
 
             const viewportWidth = window.innerWidth;
