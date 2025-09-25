@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const buttonImages = {
         'writ-btn': 'assets/reach_me.jpg',
         'lino-btn': 'assets/reach_me.jpg',
-        'reach-btn': 'assets/reach_me.jpg',
+        'reach-btn': 'assets/reach_me.png',
         'projs-btn': 'assets/reach_me.jpg'
     }
     
