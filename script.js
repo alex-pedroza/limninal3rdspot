@@ -7,36 +7,27 @@ document.addEventListener("DOMContentLoaded", function() {
         'projs-btn': 'path/to/projects-image.jpg'
 };
     
-    // Function to randomly place buttons
-    function placeButtonsRandomly() {
-        const header = document.querySelector('.gif-background'); 
+    console.log("SCRIPT IS LOADING");
 
-        const headerWidth = header ? header.offsetWidth: 200; // Default if header missing
+    function placeButtonsRandomly() {
+        // Force a visible alert to test if function is called
+        alert("placeButtonsRandomly is running!");
+        
+        const header = document.querySelector('.gif-background');
+        const buttons = document.querySelectorAll('.randobutton');
+
+        const headerWidth = header ? header.offsetWidth : 200;
         const headerHeight = header ? header.offsetHeight : 200;
 
         buttons.forEach(button => {
-
             const buttonId = button.id;
-            if (buttonImages[buttonId]) {
-            button.style.backgroundImage = `url(${buttonImages[buttonId]})`;
-            }
-            if (buttonImages[buttonId]) {
-            const img = new Image();
-            img.src = buttonImages[buttonId];
             
-            img.onload = function() {
-                console.log('Image loaded successfully:', buttonImages[buttonId]);
+            // Set background image directly
+            if (buttonImages[buttonId]) {
                 button.style.backgroundImage = `url('${buttonImages[buttonId]}')`;
-                button.style.backgroundColor = 'transparent'; // Remove any fallback color
-            };
-            
-            img.onerror = function() {
-                console.error('Image failed to load:', buttonImages[buttonId]);
-                button.style.backgroundColor = 'red'; // Show error color
-            };
-        }
+            }
 
-
+            // Your existing positioning code
             const viewportWidth = window.innerWidth;
             const viewportHeight = window.innerHeight;
 
@@ -49,11 +40,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 randomLeft = Math.floor(Math.random() * (viewportWidth - button.offsetWidth));
                 attempts++;
             } while (
-                (randomTop < headerHeight && randomLeft < headerWidth) && // Check if inside header zone
+                (randomTop < headerHeight && randomLeft < headerWidth) &&
                 (attempts < maxAttempts)
             );
 
-            // Fallback placement if too many attempts
             if (attempts >= maxAttempts) {
                 randomTop = headerHeight;
                 randomLeft = headerWidth;
@@ -64,14 +54,11 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // Call the function when the page loads
-    document.addEventListener('DOMContentLoaded', placeButtonsRandomly);
-
-    // Optional: Re-position when window is resized
-    window.addEventListener('resize', placeButtonsRandomly);
-
-    // Call the function to place buttons randomly
+    // Call function immediately
     placeButtonsRandomly();
+
+    // Also call on resize
+    window.addEventListener('resize', placeButtonsRandomly);
 
     // Change cursor on mouse down and revert on mouse up
     document.body.addEventListener('mousedown', function() {
