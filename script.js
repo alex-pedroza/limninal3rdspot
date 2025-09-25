@@ -2,10 +2,10 @@ document.addEventListener("DOMContentLoaded", function() {
     const buttons = document.querySelectorAll('.randobutton');
     const buttonImages = {
         'writ-btn': 'assets/reach_me.jpg',
-        'lino-btn': 'path/to/lino-cuts-image.jpg',
+        'lino-btn': 'assets/reach_me.jpg',
         'reach-btn': 'assets/reach_me.jpg',
-        'projs-btn': 'path/to/projects-image.jpg'
-};
+        'projs-btn': 'assets/reach_me.jpg'
+    }
     
     console.log("SCRIPT IS LOADING");
 
@@ -53,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function() {
             button.style.left = `${randomLeft}px`;
         });
     }
+
 
     // Call function immediately
     placeButtonsRandomly();
