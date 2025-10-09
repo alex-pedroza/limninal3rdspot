@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const buttons = document.querySelectorAll('.randobutton');
     const buttonImages = {
         'writ-btn': 'assets/reach_me.jpg',
-        'lino-btn': 'assets/reach_me.jpg',
+        'arts-btn': 'assets/ze_arts.png',
         'reach-btn': 'assets/reach_me.png',
         'projs-btn': 'assets/reach_me.jpg'
     }
